@@ -27,14 +27,6 @@ pipeline {
             post {
                 always {
                     junit 'test-reports/results.xml'
-                     publishHTML (target: [
-                          allowMissing: false,
-                          alwaysLinkToLastBuild: false,
-                          keepAll: true,
-                          reportDir: '/home/Documents/GitHub/simple-python-pyinstaller-app/reports',
-                          reportFiles: 'index.html',
-                          reportName: "RCov Report"
-                        ])
                 }
             }
         }
