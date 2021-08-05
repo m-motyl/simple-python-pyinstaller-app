@@ -46,13 +46,16 @@ pipeline {
                 success {
                     archiveArtifacts "${env.BUILD_ID}/sources/dist/add2vals" 
                     sh "docker run --rm -v ${VOLUME} ${IMAGE} 'rm -rf build dist'"
-                    publishHTML (target : [allowMissing: false,
-                     alwaysLinkToLastBuild: true,
-                     keepAll: true,
-                     reportDir: 'reports',
-                     reportFiles: 'myreport.html',
-                     reportName: 'My Reports',
-                     reportTitles: 'The Report'])
+                    publishHTML([
+                      allowMissing: false,
+                      alwaysLinkToLastBuild: false,
+                      includes: '**/*.png',
+                      keepAll: true,
+                      reportDir: 'reports/',
+                      reportFiles: 'friday_health_broker_portal_uat_index.html',
+                      reportName: 'HTML Report',
+                      reportTitles: 'FH BP'
+                     ])
                 }
             }
         }
