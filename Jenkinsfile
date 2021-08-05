@@ -34,7 +34,7 @@ pipeline {
                           reportDir: '/home/Documents/GitHub/simple-python-pyinstaller-app/reports',
                           reportFiles: 'index.html',
                           reportName: "RCov Report"
-                        ])s
+                        ])
                 }
             }
         }
