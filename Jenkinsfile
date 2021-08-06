@@ -4,11 +4,10 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        image 'ubuntu:latest'
         stage('Build') {
             agent {
                 docker {
-                    //image 'ubuntu:latest'
+                    image 'ubuntu:latest'
                     image 'python:2-alpine'
                 }
             }
