@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     options {
         skipStagesAfterUnstable()
     }
@@ -28,6 +28,16 @@ pipeline {
             post {
                 always {
                     junit 'test-reports/results.xml'
+                }
+                success{
+                    publishHTML target: [
+                                  allowMissing: false,
+                                  alwaysLinkToLastBuild: false,
+                                  keepAll: true,
+                                  reportDir: 'coverage',
+                                  reportFiles: 'index.html',
+                                  reportName: 'RCov Report'
+                                ]
                 }
             }
         }
