@@ -9,6 +9,7 @@ pipeline {
                 docker {
                     image 'ubuntu'
                     image 'python:2-alpine'
+                    sh 'docker run -d -t --name ubuntu-test ubuntu:latest'
                 }
             }
             steps {
