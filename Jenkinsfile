@@ -34,7 +34,6 @@ pipeline {
                                   allowMissing: false,
                                   alwaysLinkToLastBuild: false,
                                   keepAll: true,
-                                  reportDir: '/var/jenkins_home/jobs/git_test/builds/6/htmlreports/RCov_20Report',
                                   reportFiles: 'index.html',
                                   reportName: 'RCov Report'
                                 ]
