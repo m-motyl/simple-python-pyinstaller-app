@@ -7,9 +7,8 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'ubuntu'
+                    image 'ubuntu:latest'
                     image 'python:2-alpine'
-                    sh 'docker run -d -t --name ubuntu-test ubuntu:latest'
                 }
             }
             steps {
